@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>M&G</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+:root{
+  --beige: #f5f1eb;
+  --beige-strong: #e8dfd4;
+  --salvia: #6b7d6b;
+  --salvia-dark: #4f5e4f;
+  --text-dark: #2f2f2f;
+}
+
+html{ scroll-behavior:smooth; }
+
+body,h1,h2,h3{ font-family:"Raleway",sans-serif; }
+
+body{
+  background-color: var(--beige);
+  color: var(--salvia-dark);
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.4)),
+    url("IMG-20260316-WA0079.jpg") center 45% / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fdfcf9;
+}
+
+.hero h1{ font-size:70px; letter-spacing:1px; }
+
+.countdown{ font-size:22px; margin-top:20px; }
+
+/* SEZIONI */
+.section{ padding:80px 20px; background-color: var(--beige); }
+
+.bg2{
+  background:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.4)),
+    url("https://www.w3schools.com/w3images/flowers.jpg") center/cover no-repeat;
+  color:#fdfcf9;
+  text-align:center;
+}
+
+/* NAVBAR */
+.w3-top{ background-color: var(--beige) !important; }
+.w3-bar-item{ color: var(--salvia-dark) !important; }
+.w3-bar-item:hover{ background-color: var(--salvia) !important; color:white !important; }
+
+/* BOTTONI */
+.w3-button.btn-green{ background-color: var(--salvia) !important; color:white !important; border:none !important; }
+.w3-button.btn-green:hover{ background-color: var(--salvia-dark) !important; }
+
+.w3-button.btn-red{ background-color: #a67c7c !important; color:white !important; border:none !important; }
+.w3-button.btn-red:hover{ background-color: #8c6666 !important; }
+
+/* MAPPE */
+iframe{ border-radius:12px; }
+
+/* RESET COLORI W3CSS */
+[class*="w3-"]{ background-color: transparent !important; color: inherit !important; }
+.w3-button{ background-color: transparent !important; }
+.w3-card, .w3-modal-content{ background-color: white !important; }
+
+/* SFONDI */
+.bg-beige{ background-color: var(--beige); }
+.bg-dark{ background-color: var(--salvia-dark); color:white; }
+
+/* MOBILE */
+@media (max-width:600px){
+  .hero h1{ font-size:38px; }
+  .hero h2{ font-size:20px; }
+  .countdown{ font-size:18px; }
+
+  .section h2{ font-size:32px; }
+  .section h3{ font-size:22px; }
+  .section p{ font-size:16px; line-height:1.5; }
+
+  .w3-bar-item{ font-size:18px; font-weight:600; }
+}
+
+/* Titoli principali in corsivo calligrafico */
+.title-main, 
+.title-wedding {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;           /* grandezza importante */
+    font-weight: 400;          /* normale, il corsivo è già decorativo */
+    color: var(--salvia-dark); /* verde salvia scuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Titoli sulla hero */
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400; /* normale, il corsivo è decorativo */
+    color: #fdfcf9;   /* bianco sporco già presente */
+}
+
+.img-about {
+  display: block;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px; /* mantiene l’effetto w3-round */
+}
+
+</style>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<body>
+
+<!-- NAVBAR -->
+<div class="w3-top w3-card">
+  <div class="w3-bar">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" onclick="toggleMenu()">☰</a>
+    <a href="#home" class="w3-bar-item w3-button">Home</a>
+    <a href="#us" class="w3-bar-item w3-button w3-hide-small">Michele & Giorgia</a>
+    <a href="#wedding" class="w3-bar-item w3-button w3-hide-small">Matrimonio</a>
+    <a href="#rsvp" class="w3-bar-item w3-button w3-hide-small">RSVP</a>
+  </div>
+
+  <div id="mobileMenu" class="w3-bar-block bg-beige w3-hide w3-hide-large w3-hide-medium">
+    <a href="#us" class="w3-bar-item w3-button">Michele & Giorgia</a>
+    <a href="#wedding" class="w3-bar-item w3-button">Matrimonio</a>
+    <a href="#rsvp" class="w3-bar-item w3-button">RSVP</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div>
+    <h1>Michele & Giorgia</h1>
+    <h2>Annunciamo il nostro matrimonio</h2>
+    <h3>3 Luglio 2026</h3>
+    <div class="countdown" id="countdown"></div>
+  </div>
+</section>
+<!---->
+<!-- ABOUT -->
+<section id="us" class="section">
+  <div class="w3-content" style="max-width:900px">
+    <h2 class="title-main">Michele & Giorgia</h2>
+    <img src="IMG_20231223_144358_535.jpg" class="img-about">
+    <p class="w3-center">
+      We are so excited to celebrate our special day with you.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</section>
+
+<!-- INVITED -->
+<section class="section bg2">
+  <h1>Sei invitato</h1>
+  <h3>Unisciti a noi nel nostro giorno speciale</h3>
+</section>
+
+<!-- WEDDING -->
+<section id="wedding" class="section">
+  <div class="w3-content">
+    <h2 class="title-wedding">Il Matrimonio</h2>
+    <div class="w3-row">
+      <div class="w3-half w3-center">
+        <h3>Quando</h3>
+        <p>Cerimonia - 11:00</p>
+        <p>Pranzo - 13:00</p>
+      </div>
+      <div class="w3-half w3-center">
+        <h3>Dove</h3>
+        <p>Chiesa San Francesco Caracciolo, Piazzale Tricalle, 16, 66100 Chieti CH</p>
+        <p>San Pietro Country House, Via S P Salara, 115, 64020 Morro d'Oro TE</p>
+      </div>
+    </div>
+    <br><br>
+    <div class="w3-row" style="margin-top:40px">
+      <div class="w3-half w3-padding">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.089932451753!2d14.16462511168997!3d42.36192263486381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331ac22e36fcce1%3A0x6019ce5a7bc420ff!2sChiesa%20di%20San%20Francesco%20Caracciolo!5e0!3m2!1sit!2sit!4v1773657962821!5m2!1sit!2sit" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="w3-half w3-padding">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.8358309989726!2d13.932952511703897!3d42.66483421567206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13319572564a30fd%3A0x69b594ec21684da2!2sCountry%20House%20San%20Pietro!5e0!3m2!1sit!2sit!4v1773658090087!5m2!1sit!2sit" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp" class="section w3-center">
+  <h2>RSVP</h2>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSck2aldIOXcO0gof-QlwYKq8KMZX6vMunchQjO6Em8AFH9zgA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginwidth="0">Caricamento…</iframe>
+</section>
+
+<!-- MODAL -->
+<div id="rsvpModal" class="w3-modal">
+  <div class="w3-modal-content w3-card w3-padding" style="max-width:500px">
+    <form action="https://formsubmit.co/mikdr51@gmail.com" method="POST">
+      <input class="w3-input w3-border" type="text" name="nome" placeholder="Nome" required>
+      <br>
+      <button type="submit" name="risposta" value="CONFERMA PRESENZA" class="w3-button btn-green w3-block">Conferma presenza</button>
+      <br>
+      <button type="submit" name="risposta" value="NON PUO VENIRE" class="w3-button btn-red w3-block">Non posso venire</button>
+      <input type="hidden" name="_subject" value="RSVP Matrimonio">
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="w3-center w3-padding bg-dark">
+  <p>Michele & Giorgia</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  var x=document.getElementById("mobileMenu");
+  if(x.className.indexOf("w3-show")==-1) x.className+=" w3-show";
+  else x.className=x.className.replace(" w3-show","");
+}
+
+/* countdown */
+var weddingDate=new Date("July 3, 2026 11:00:00").getTime();
+var x=setInterval(function(){
+  var now=new Date().getTime();
+  var distance=weddingDate-now;
+  var days=Math.floor(distance/(1000*60*60*24));
+  var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+  document.getElementById("countdown").innerHTML = days+" giorni "+hours+" ore "+minutes+" minuti";
+},1000);
+</script>
+
+</body>
+</html>
