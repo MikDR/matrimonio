@@ -119,11 +119,12 @@ iframe{ border-radius:12px; }
 }
 
 #wedding{
-  padding-bottom: 25px;
+  padding-bottom: 15px;
 }
 
 #rsvp{
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 </style>
@@ -208,30 +209,44 @@ iframe{ border-radius:12px; }
 <!-- RSVP -->
 <section id="rsvp" class="section w3-center">
   <h2>CONFERMACI LA TUA PRESENZA</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSck2aldIOXcO0gof-QlwYKq8KMZX6vMunchQjO6Em8AFH9zgA/viewform?embedded=true" width="100%" height="920" frameborder="0" marginwidth="0">Caricamento…</iframe>
-  <!-- BOTTONE AGGIUNGI AL CALENDARIO -->
-  <div style="margin-top:20px;">
-    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Michele+%26+Giorgia+3%2F7%2F2026&dates=20260701T190000/20260701T210000"       
-      target="_blank" 
-      class="w3-button btn-green">
+  
+  <div class="rsvp-buttons" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:25px;">
+    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Matrimonio+Michele+%26+Giorgia+3%2F7%2F2026&dates=20260701T190000/20260701T210000"
+       target="_blank"
+       class="w3-button btn-green">
       Aggiungi al calendario
+    </a>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSck2aldIOXcO0gof-QlwYKq8KMZX6vMunchQjO6Em8AFH9zgA/viewform"
+       target="_blank"
+       class="w3-button btn-green">
+      Compila il form
     </a>
   </div>
 </section>
 
-<!-- MODAL -->
-<div id="rsvpModal" class="w3-modal">
-  <div class="w3-modal-content w3-card w3-padding" style="max-width:500px">
-    <form action="https://formsubmit.co/mikdr51@gmail.com" method="POST">
-      <input class="w3-input w3-border" type="text" name="nome" placeholder="Nome" required>
-      <br>
-      <button type="submit" name="risposta" value="CONFERMA PRESENZA" class="w3-button btn-green w3-block">Conferma presenza</button>
-      <br>
-      <button type="submit" name="risposta" value="NON PUO VENIRE" class="w3-button btn-red w3-block">Non posso venire</button>
-      <input type="hidden" name="_subject" value="RSVP Matrimonio">
-    </form>
-  </div>
-</div>
+<style>
+/* Stili responsive per i bottoni RSVP */
+.rsvp-buttons a {
+  border-radius: 12px;
+  padding: 12px 24px;
+  min-width: 200px;
+  text-align: center;
+  flex: 1 1 auto;
+  max-width: 300px;
+}
+
+@media (max-width: 600px) {
+  .rsvp-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .rsvp-buttons a {
+    max-width: 90%;
+  }
+}
+</style>
 
 <!-- FOOTER -->
 <footer class="w3-center w3-padding bg-dark">
